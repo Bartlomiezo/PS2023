@@ -17,23 +17,41 @@ void zad322(int a, int b){
         printf("Adres mniejszej liczby to %p\n", &a);
     }
 }
-void zad324(int *a, int *b){
+void zad324(int *_a, int *_b){
     int c;
-    if(*b<*a){
-        c=*b;
-        *b=*a;
-        *a=c;
+    if(*_b<*_a){
+        c=*_b;
+        *_b=*_a;
+        *_a=c;
     }
 }
-void zad326(int *n, int *w){
-    *w=*n;
-    printf("%p\n",&w);
+void zad326(int *_n, int *_w){
+    *_w=*_n;
+    printf("%p\n",&_w);
 }
-void *zad329(int *p){
-    
+void *zad329(){
+    int *size=malloc(sizeof(int));
+    printf("%d\n",*size);
+    free(size);
 }
+void *zad3211(unsigned int z){
+    int *size1=malloc(z*sizeof(int));
+    printf("%p\n",&size1[0]);
+    free(size1);
+}
+void *zad3212(unsigned int z){
+    double *size2=malloc(z*sizeof(double));
+    printf("%p\n",&*size2);
+    free(size2);
+}
+void zad3216(int *p,const int *m){
+    m=p;
+    printf("%d",m);
+}
+
 int main()
 {
+    int size;
     int a,b;
     printf("Podaj dwie liczby: ");
    scanf("%d%d", &a, &b);
@@ -47,5 +65,9 @@ int main()
    scanf("%d %d",&n,&w);
    printf("%p %p\n",&n,&w);
    zad326(&n,&w);
+   zad329();
+   zad3211(5);
+   zad3212(5);
+   zad3216(6,1);
+   }
 
-}
