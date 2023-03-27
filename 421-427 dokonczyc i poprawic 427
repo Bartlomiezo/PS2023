@@ -1,0 +1,130 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void zad421(unsigned n,int tab[n]){
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        tab[i]=abs(tab[i]);
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        tab[i]=0;
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        tab[i]=i;
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        tab[i]=tab[i]*2;
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab[i]);
+    }
+    printf("\n");
+
+}
+void zad424(unsigned n, unsigned tab[n]){
+    double srednia=1;
+    double wynik=0;
+    for(int i=0;i<n;i++){
+        srednia=tab[i]*srednia;
+    }
+    wynik=pow(srednia,1.0/n);
+    printf("%lf\n", wynik);
+}
+void zad426(unsigned n,int tabb1[],int tabb2[]){
+    for(int i=0;i<n;i++){
+        tabb2[i]=tabb1[i];
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tabb2[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        tabb2[n-i-1]=tabb1[i];
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tabb2[i]);
+    }
+    printf("\n");
+
+}
+void zad427_1(unsigned n, int tab1[n], int tab2[n],int tab3[n]){
+    for(int i=0;i<n;i++){
+        tab3[i]=tab1[i]+tab2[i];
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab3[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        if(tab1[i]>tab2[i]){
+            tab3[i]=tab1[i];
+        }
+        else{
+            tab3[i]=tab2[i];
+        }
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab3[i]);
+    }
+    printf("\n");
+}
+void zad427_2(unsigned n,int tab1[n],int tab2[n],int tab3[n]){
+    int temp1,temp2;
+    for(int i=0; i<n;i++){
+        temp1=tab1[i];
+        temp2=tab2[i];
+        tab1[i]=tab3[i];
+        tab2[i]=temp1;
+        tab3[i]=temp2;
+    }
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab1[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab2[i]);
+    }
+    printf("\n");
+    for(int i=0;i<n;i++){
+        printf("%d, ",tab3[i]);
+    }
+    printf("\n");
+}
+void zad4210(unsigned n, int tab[n]){
+}
+int main()
+{
+    printf("ZAD 421\n");
+    int tab[5]={1,2,-5,3,-8};
+    zad421(5,tab);
+    unsigned int tab2[7]={1,2,3,4,5,6,7};
+    printf("ZAD 424\n");
+    zad424(7,tab2);
+    int tabb1[6]={1,2,3,4,5,6};
+    int tabb2[6]={7,8,9,10,11,12};
+    printf("ZAD 426\n");
+    zad426(6,tabb1,tabb2);
+    int tabbb1[3]={1,2,3};
+    int tabbb2[3]={4,5,6};
+    int tabbb3[3]={7,8,9};
+    printf("ZAD 427\n");
+    zad427_1(3,tabbb1,tabbb2,tabbb3);
+    printf("ZAD 427 c\n");
+    zad427_2(3,tabbb1,tabbb2,tabbb3);
+    printf("ZAD 4210");
+}
