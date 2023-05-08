@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+double *zad4214(unsigned int n){
+    return malloc(n*sizeof(double));
+}
+void *zad4216(double *tab){
+    free(tab);
+}
+double zad4217(unsigned int n,double tab[n]){
+    double kopia[]={};
+    for(int i=0;i<n;i++){
+        kopia[i]=tab[i];
+    }
+    return *kopia;
+
+}
+int *zad4219(unsigned int n, int tab[n]){
+    int licznik=0;
+    int temp=0;
+    int tab2[]={};
+    for(int i=0;i<n;i++){
+        if(tab[i]!=0){
+            licznik++;
+        }
+            
+    }
+    for(int i=0;i<n;i++){
+        if(tab[i]!=0){
+            tab2[temp]=tab[i];
+            temp++;
+        }
+    }
+    return *tab2;
+}
+int main()
+{
+  zad4214("4");
+  double tab[5]={4,-7,2,5.6,8};
+  zad4217(5,tab);
+  int tab1[6]={1,5,2,5,7,2};
+  zad4219(6,tab1);
+}
