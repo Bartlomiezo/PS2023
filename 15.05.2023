@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int dlugosc(char napis[]){
+    int licznik=0;
+    while(napis[licznik]!=0){
+        licznik++;
+    }
+    return licznik;
+}
+int porownaj(char *napis1, char *napis2){
+    for(int i=0;(napis1[i]!=0)&&(napis2[i]!=0);i++){
+        if(napis1[i]!=napis2[i]){
+            if(napis1[i]>napis2[i]){
+                return 0;
+            }
+        if(napis2[i]>napis1[i]){
+            return 1;
+        }
+        }
+    }
+}
+void kopiujn(char *napis1, char napis2[],int n){
+    if(n>dlugosc(napis1)){
+        for(int i=0;i<dlugosc(napis1);i++){
+            napis2[i]=napis1[i];
+        }
+    }
+    else{
+        for(int i=0;i<n;i++){
+            napis2[i]=napis1[i];
+    }
+    }
+printf("%s\n", napis2);
+}
+void sklej(char *napis1, char *napis2, char *napis3){
+    char sklejony[1000];
+    strcat(sklejony,napis1);
+    strcat(sklejony,napis2);
+    strcat(sklejony,napis3);
+    printf("%s",sklejony);
+
+}
+int main()
+{
+    const char *tekst = "samochod";
+    const char *tekst2 = "tiry";
+    printf("%d\n",dlugosc(tekst));
+    printf("%d\n",porownaj(tekst,tekst2));
+    const char *napis ="miska";
+    char napis2[1000]="talerz";
+    kopiujn(napis,napis2,100);
+    sklej(tekst,tekst2,napis);
+}
