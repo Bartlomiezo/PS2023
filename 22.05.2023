@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+int **zad621(unsigned int n,unsigned int m){
+    int **t=malloc(n*sizeof(int*));
+    for(int i=0;i<n;i++){
+        t[i]=malloc(m*sizeof(int));
+}
+    return t;
+}
+int **zad625(unsigned int n,unsigned int m, unsigned int b){
+    int **t=malloc(n*sizeof(int*));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<b;j++){
+            t[i][j]=malloc(m*sizeof(int));
+        }
+}
+    return t;
+}
+int **zad627(unsigned int n){
+    int **t=malloc(n*sizeof(int*));
+    for(int i=0;i<n;i++){
+        t[i]=malloc((i+1)*sizeof(int));
+    }
+    return t;
+}
+int **zad6211(int tab[][100]){
+    int suma=0;
+    for(int i=0;i<tab[1][0];i++){
+        for(int j=0;j<100;j++){
+            suma+=tab[i][j];
+        }
+    }
+    return suma;
+}
+int **zad6214(int tab [100][100][100]){
+    int suma=0;
+    for(int i=0;i<100;i++){
+        for(int j=0;j<100;j++){
+            for(int k=0;k<100;k++){
+                suma+=tab[i][j][k];
+            }
+        }
+    }
+    return suma;
+}
+int **zad6217(int tab[100][100]){
+    int max,tmpr=0;
+    for(int i=0;i<100;i++){
+        tmpr=0;
+        for(int j=0;j<100;j++){
+            tmpr+=tab[i][j];
+        }
+    if(tmpr>max){
+        max=tmpr;
+    }
+    }
+    return max;
+}
+
+int main()
+{
+    zad621(3,3);
+    zad625(3,3,3);
+    zad627(3);
+}
