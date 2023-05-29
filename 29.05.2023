@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct punkt{x,y,z};
+
+double minimum(struct punkt tab[], int n){
+    int i,j;
+    double pom,min=sqrt(pow(tab[1].x=tab[0].x,2))+pow(tab[1].y-tab[0].y,2)+pow(tab[1].z-tab[0].z,2));
+for(i=0;i<n-1;i++){
+    for(j=i+1;j<n;j++){
+    pom=sqrt(pow(tab[j].x-tab[i].x,2)
+             +pow(tab[j].y-tab[i].y,2)
+             +pow(tab[j].z-tab[i].z,2));
+    if(pom<min){
+        min=pom;}
+    }
+}
+return min;
+}
+void przepisz(struct punkt tab1[],struct punkt tab2[]), unsigned int n){
+for(int i=0;i<n;i++){
+    tab2[i]=tab1[i]
+}
+}
+struct punkt10{
+    double t[10];
+}
+void przepisz2(struct punkt10 tab1[],struct punkt10 tab2[],unsigned int n){
+for(int i=0;i<n;i++){
+    tab2[i]=tab1[i];
+}
+}
+struct zespolone{double im,re};
+double dodaj(double zespolone pier, double zespolone drug){
+    double sumare=0;
+    double sumaim=0;
+    sumare=pier.re+drug.re;
+    sumaim=pier.im+drug.im;
+    return sumare,sumaim;
+}
+int main()
+{
+    
+}
